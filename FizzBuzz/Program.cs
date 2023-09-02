@@ -6,6 +6,9 @@ var transformations = new ITransformer[]
     new Buzz()
 };
 
+var executor = new TransformationExecutor(transformations);
+var printer = new Printer(executor);
+
 Console.Write("Please enter the range: ");
 
 int range;
@@ -14,6 +17,5 @@ while (!int.TryParse(Console.ReadLine(), out range))
 {
     Console.Write("Invalid input. Please enter a valid integer for the range: ");
 }
-var executor = new TransformationExecutor(transformations);
 
-Printer.PrintNumberTransformations(range, executor);
+printer.PrintNumberTransformations(range);
