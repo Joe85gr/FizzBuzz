@@ -21,4 +21,4 @@ public class Buzz : ITransformer
 
 ### Notes:
 Yes, the order of the transformers is important. Having Buzz before Fizz, would break the tests.
-However, in a real scenario, the TransformationExecutor would receive the ITransformer through dependency injection, so the developers would be in control of the order and ensure it is correct. All the user would do is pass a range of numbers and wait for the result.
+Thankfully, the order is controlled by the developer, and all the user can input is a range of numbers.
