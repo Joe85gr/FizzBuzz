@@ -1,6 +1,6 @@
 namespace FizzBuzz;
 
-public class TransformationExecutor
+public class TransformationExecutor : ITransformationExecutor
 {
     private readonly ITransformer[] _transformers;
 
