@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzTests", "FizzBuzzTests\FizzBuzzTests.csproj", "{31EFA207-7289-4C35-9115-9147E72D6E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "FizzBuzz\FizzBuzz.csproj", "{5137DDEE-C611-4561-BC18-1D1879752C0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz.App", "FizzBuzz.App\FizzBuzz.App.csproj", "{5137DDEE-C611-4561-BC18-1D1879752C0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz.Domain", "FizzBuzz.Domain\FizzBuzz.Domain.csproj", "{DE3A2AB4-4C91-4F0D-8BA1-DFE0046B08FE}"
 EndProject

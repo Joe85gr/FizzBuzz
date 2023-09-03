@@ -1,6 +1,6 @@
 using FizzBuzz.Domain;
 
-namespace FizzBuzz;
+namespace FizzBuzz.App;
 
 public class Printer : IRunner
 {
@@ -12,15 +12,10 @@ public class Printer : IRunner
     
     public void Run()
     {
-        var range = InputRetriever.GetNumberRangeFromUser();
+        var range = ConsoleInteractor.GetRangeFromUser();
         var results = GetTransformations(range);
         
-        foreach (var result in results)
-        {
-            Console.WriteLine(result);
-        }
-        
-        Console.WriteLine("Press any key to exit...");
+        ConsoleInteractor.PrintResults(results);
     }
     
     private IEnumerable<string> GetTransformations(int range)

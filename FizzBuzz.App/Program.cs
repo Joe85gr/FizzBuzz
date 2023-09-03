@@ -1,4 +1,4 @@
-﻿using FizzBuzz;
+﻿using FizzBuzz.App;
 using FizzBuzz.Domain;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
