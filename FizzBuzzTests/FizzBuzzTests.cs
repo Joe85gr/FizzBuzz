@@ -1,4 +1,4 @@
-using FizzBuzz;
+using FizzBuzz.Domain;
 using FluentAssertions;
 
 namespace FizzBuzzTests;
@@ -16,10 +16,10 @@ public class TransformationExecutorTests
 
         var transformers = new ITransformer[]
         {
-            new Fizz(),
+            new Fizz()
         };
         
-        var sut = new TransformationExecutor(transformers);
+        var sut = new TransformationService(transformers);
         
         // Act
         var result = sut.Transform(number);
@@ -39,10 +39,10 @@ public class TransformationExecutorTests
 
         var transformers = new ITransformer[]
         {
-            new Buzz(),
+            new Buzz()
         };
         
-        var sut = new TransformationExecutor(transformers);
+        var sut = new TransformationService(transformers);
         
         // Act
         var result = sut.Transform(number);
@@ -63,10 +63,10 @@ public class TransformationExecutorTests
         var transformers = new ITransformer[]
         {
             new Fizz(),
-            new Buzz(),
+            new Buzz()
         };
         
-        var sut = new TransformationExecutor(transformers);
+        var sut = new TransformationService(transformers);
         
         // Act
         var result = sut.Transform(number);
@@ -86,10 +86,10 @@ public class TransformationExecutorTests
         var transformers = new ITransformer[]
         {
             new Fizz(),
-            new Buzz(),
+            new Buzz()
         };
         
-        var sut = new TransformationExecutor(transformers);
+        var sut = new TransformationService(transformers);
         
         // Act
         var result = sut.Transform(number);

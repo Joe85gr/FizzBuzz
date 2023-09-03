@@ -1,19 +1,33 @@
+using FizzBuzz.Domain;
+
 namespace FizzBuzz;
 
-public class Printer
+public class Printer : IRunner
 {
-    private readonly ITransformationExecutor _executor;
-    public Printer(ITransformationExecutor executor)
+    private readonly ITransformationService _service;
+    public Printer(ITransformationService service)
     {
-        _executor = executor;
+        _service = service;
     }
     
-    public void PrintNumberTransformations(int range)
+    public void Run()
+    {
+        var range = InputRetriever.GetNumberRangeFromUser();
+        var results = GetTransformations(range);
+        
+        foreach (var result in results)
+        {
+            Console.WriteLine(result);
+        }
+        
+        Console.WriteLine("Press any key to exit...");
+    }
+    
+    private IEnumerable<string> GetTransformations(int range)
     {
         for (var i = 1; i <= range; i++)
         {
-            var result = _executor.Transform(i);
-            Console.WriteLine(result);
+            yield return _service.Transform(i);
         }
     }
 }

@@ -1,10 +1,10 @@
-namespace FizzBuzz;
+namespace FizzBuzz.Domain;
 
-public class TransformationExecutor : ITransformationExecutor
+public class TransformationService : ITransformationService
 {
-    private readonly ITransformer[] _transformers;
+    private readonly IEnumerable<ITransformer>  _transformers;
 
-    public TransformationExecutor(ITransformer[] transformers)
+    public TransformationService(IEnumerable<ITransformer> transformers)
     {
         _transformers = transformers;
     }

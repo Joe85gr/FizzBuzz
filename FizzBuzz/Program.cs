@@ -1,21 +1,24 @@
 ﻿using FizzBuzz;
+using FizzBuzz.Domain;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-var transformations = new ITransformer[]
+using var host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices(services =>
+    {
+        services.AddTransient<ITransformer, Fizz>();
+        services.AddTransient<ITransformer, Buzz>();
+        services.AddTransient<ITransformationService, TransformationService>();   
+        services.AddTransient<IRunner, Printer>();   
+    })
+    .Build();
+
+var app = host.Services.GetService<IRunner>();
+if(app is null)
 {
-    new Fizz(), 
-    new Buzz()
-};
-
-var executor = new TransformationExecutor(transformations);
-var printer = new Printer(executor);
-
-Console.Write("Please enter the range: ");
-
-int range;
-
-while (!int.TryParse(Console.ReadLine(), out range))
-{
-    Console.Write("Invalid input. Please enter a valid integer for the range: ");
+    throw new NullReferenceException("app is null. This mean that the IRunner service is not registered.");
 }
 
-printer.PrintNumberTransformations(range);
+app.Run();
+
+await host.RunAsync();

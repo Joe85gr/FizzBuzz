@@ -1,4 +1,4 @@
-namespace FizzBuzz;
+namespace FizzBuzz.Domain;
 
 public interface ITransformer
 {
