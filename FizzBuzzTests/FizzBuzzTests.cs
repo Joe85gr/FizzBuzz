@@ -13,7 +13,7 @@ public class TransformationExecutorTests
     {
         // Arrange
         const string expectedResult = "Fizz";
-
+    
         var transformers = new ITransformer[]
         {
             new Fizz()
@@ -23,7 +23,7 @@ public class TransformationExecutorTests
         
         // Act
         var result = sut.Transform(number);
-
+    
         // Assert
         result.Should().Be(expectedResult);
     }
@@ -36,7 +36,7 @@ public class TransformationExecutorTests
     {
         // Arrange
         const string expectedResult = "Buzz";
-
+    
         var transformers = new ITransformer[]
         {
             new Buzz()
@@ -46,7 +46,7 @@ public class TransformationExecutorTests
         
         // Act
         var result = sut.Transform(number);
-
+    
         // Assert
         result.Should().Be(expectedResult);
     }
@@ -59,7 +59,7 @@ public class TransformationExecutorTests
     {
         // Arrange
         const string expectedResult = "FizzBuzz";
-
+    
         var transformers = new ITransformer[]
         {
             new Fizz(),
@@ -70,7 +70,7 @@ public class TransformationExecutorTests
         
         // Act
         var result = sut.Transform(number);
-
+    
         // Assert
         result.Should().Be(expectedResult);
     }
@@ -79,7 +79,7 @@ public class TransformationExecutorTests
     [InlineData(1, "1")]
     [InlineData(2, "2")]
     [InlineData(4, "4")]
-    [InlineData(7, "7")]
+    [InlineData(8, "8")]
     public void ReturnsNumber_WhenNumberIsNotDivisibleByAnyTransformer(int number, string expectedResult)
     {
         // Arrange
@@ -93,7 +93,7 @@ public class TransformationExecutorTests
         
         // Act
         var result = sut.Transform(number);
-
+    
         // Assert
         result.Should().Be(expectedResult);
     }

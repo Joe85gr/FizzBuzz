@@ -32,8 +32,8 @@ using var host = Host.CreateDefaultBuilder(args)
     .Build();
 ```
 
-That's it. Now our code will be able to support the new requirements, without worrying to break the previous requirements:
-
+That's it. Now our code will be able to support the new requirements, without worrying to break the previous requirements.
+Since we are good devs, we should also write another test case :D
 
 ### Notes:
 The order of the transformers services registration is important. Registering Buzz before Fizz, would break the tests.
