@@ -3,7 +3,7 @@ using FluentAssertions;
 
 namespace FizzBuzzTests;
 
-public class TransformationExecutorTests
+public class TransformationServiceTests
 {
     [Theory]
     [InlineData(3)]

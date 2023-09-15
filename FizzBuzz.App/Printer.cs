@@ -13,12 +13,13 @@ public class Printer : IRunner
     public void Run()
     {
         var range = ConsoleInteractor.GetRangeFromUser();
-        var results = GetTransformations(range);
+        
+        var results = GetTransformationsResults(range);
         
         ConsoleInteractor.PrintResults(results);
     }
     
-    private IEnumerable<string> GetTransformations(int range)
+    private IEnumerable<string> GetTransformationsResults(int range)
     {
         for (var i = 1; i <= range; i++)
         {

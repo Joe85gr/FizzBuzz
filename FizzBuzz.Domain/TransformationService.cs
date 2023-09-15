@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace FizzBuzz.Domain;
 
 public class TransformationService : ITransformationService
@@ -11,13 +13,18 @@ public class TransformationService : ITransformationService
 
     public string Transform(int number)
     {
-        var result = string.Empty;
+        var result = new StringBuilder();
         
         foreach (var transformer in _transformers)
         {
-            result += transformer.Transform(number);
+            result.Append(transformer.Transform(number));
+        }
+        
+        if (result.Length == 0)
+        {
+            result.Append(number);
         }
 
-        return result == string.Empty ? number.ToString() : result;
+        return result.ToString();
     }
 }
